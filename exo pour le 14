@@ -1,0 +1,41 @@
+#include <stdio.h>
+int pv = 50; /* pv first character*/
+int pv2 = 100 /*pv second character*/
+
+int character(int power, int hunger)
+{
+    char name[10];
+    printf("Votre personnage s'appelle :");
+    scanf("%s", name);
+    printf("\n");
+
+    int result1;
+    result1 = (power-hunger);
+    return(result1);
+}
+int pv1 = 25;
+int monster(int weakness)
+{
+    int power2;
+    power2 = (weakness-pv1);
+    return(power2);
+}
+
+int main ()
+{
+    /* First character /
+    printf("Il a faim, sa puissance diminue a %d", character(25,5));
+    printf("\n");
+    printf("Il a %d pv",pv);
+    printf("\n");
+    printf("Le premier monstre apparait il perds %d pv", monster(50));
+    printf("\n");
+    printf("\n");
+    / Second character */
+    printf("Sa puissance diminue a %d", character(40,10));
+    printf("\n");
+    printf("Il a %d pv",pv);
+    printf("\n");
+    printf("Un monstre apparait il arrive a le battre mais perds %d pv", monster(100));
+    return 0;
+}
