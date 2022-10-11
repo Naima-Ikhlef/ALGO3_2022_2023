@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int fonctionRecursive(int n) // Question 1
+{
+    if(n == 0){
+        return 1;
+    }
+    else{
+        return 2 + fonctionRecursive(n-1);
+    }
+}
+
+int fonctionPuissance(int n, int a) // Question 2a
+{
+    if(a == 1 && n == 0){
+        return 1;
+    }
+    else{
+        return a*fonctionPuissance(n,a);
+    }
+}
+
+
+int main ()
+{
+    printf("%d\n", fonctionRecursive(4)); // Result : 9
+    printf("%d\n", fonctionRecursive(0)); // Result : 1
+    printf("%d\n"), fonctionPuissance(4,2); // erreur
+}
