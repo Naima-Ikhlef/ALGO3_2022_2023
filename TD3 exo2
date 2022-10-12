@@ -11,13 +11,13 @@ int fonctionRecursive(int n) // Question 1
     }
 }
 
-int fonctionPuissance(int n, int a) // Question 2a
+int fonctionPuissance(int n, int a)
 {
-    if(a == 1 && n == 0){
+    if(a == 0){
         return 1;
     }
     else{
-        return a*fonctionPuissance(n,a);
+        return n*fonctionPuissance(n,a-1);
     }
 }
 
