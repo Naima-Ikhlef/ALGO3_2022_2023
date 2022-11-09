@@ -9,7 +9,7 @@ int main() {
     Client c;
     saisieClients(t, 3, &nbClients);
     afficherClients(t, nbClients);
-    printf("Saisir l'identifiant du client à modifier : ");
+    printf("Saisir l'identifiant du client a modifier : ");
     scanf("%d", &idClient);
     if (rechercheClient(idClient, t, nbClients, &indiceClient)) {
         modifierNom(t, nbClients, indiceClient);
@@ -22,17 +22,17 @@ int main() {
     printf("Nombre de doublons : %d \n", nbDoublons);
     saisie(&c);
     if (ajouterSansDoublon(c, t, &nbClients)) {
-        printf("Client ajouté \n");
+        printf("Client ajoute \n");
     } else {
-        printf("Client non ajouté \n");
+        printf("Client non ajoute \n");
     }
     afficherClients(t, nbClients);
-    printf("Saisir l'identifiant du client à enlever : ");
+    printf("Saisir l'identifiant du client a enlever : ");
     scanf("%d", &idClient);
     if (enleverClient(idClient, t, &nbClients)) {
-        printf("Client enlevé \n");
+        printf("Client enleve \n");
     } else {
-        printf("Client non enlevé \n");
+        printf("Client non enleve \n");
     }
     afficherClients(t, nbClients);
     return 0;
