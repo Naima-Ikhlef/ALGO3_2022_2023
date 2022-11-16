@@ -1,0 +1,14 @@
+int main()
+{
+    Tab t1 = {4,2,8,0,7,3,1,5,9,6};
+    Tab t2 = {8,45,12,4,7,89,6,0,23,56};
+     printf ("La somme des entiers du tableau t1 = %d\n",somme(t1,N,0)); // Avec 3 paramètres
+     affiche(&t1, N, 0);
+     printf("La somme des entiers du tableau t1 est %d\n",sum2(t1,N)); // Avec 2 paramètres
+     printf("Le nombre d'elements du tableau de valeur superieur a 8 est %d\n",higherValue(t1,N,0,8));
+     afficheDesc(t1,N,N-1);
+     printf("L'indice de la valeur 8 est %d\n",researchVal(t1,N,0,8));
+     printf("L'indice de la valeur 23 est %d\n",researchDicho(t2, N, 0, 23));
+
+    return 0;
+}
