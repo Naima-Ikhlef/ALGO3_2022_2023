@@ -1,0 +1,16 @@
+int higherValue(Tab t, int n ,int i,int v)
+{
+    int res=0;
+    if (i<n)
+    {
+        if (t[i]>v)
+        {
+            res=1+higherValue(t,n,i+1,v);
+        }
+        else
+        {
+            res=higherValue(t,n,i+1,v);
+        }
+    }
+    return res;
+}
