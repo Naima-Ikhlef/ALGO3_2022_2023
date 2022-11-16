@@ -1,0 +1,123 @@
+#include <stdio.h>
+#define N 10
+
+
+typedef int Tab[N];
+
+int somme(Tab t, int n, int i )
+{ int res=0;
+    printf ("Calcul de la somme a partir de l’indice %d :\n",i);
+
+    if (i<n){
+        printf ("\t appel du calcul de la somme a partir de l’indice %d :\n",i+1);
+        res=t[i]+somme(t,n,i+1);
+        printf ("\t addition avec t[%d]\n",i );
+        }
+
+    printf ("\t Somme a partir de l’indice %d = %d\n\n",i,res);
+    return res ;
+}
+// Question 1 :
+
+void affiche(int *t, int n, int i){
+    if (i == n) return;
+
+    printf("%d", t[0]);
+    affiche(t+1, n, i+1);
+}
+
+// Question 2 :
+int sum2(Tab t, int n)
+{
+    int res=0;
+    if (n>0)
+    {
+        res=t[n-1]+sum2(t,n-1);
+    }
+    return res;
+}
+
+// Question 3 :
+
+int higherValue(Tab t, int n ,int i,int v)
+{
+    int res=0;
+    if (i<n)
+    {
+        if (t[i]>v)
+        {
+            res=1+higherValue(t,n,i+1,v);
+        }
+        else
+        {
+            res=higherValue(t,n,i+1,v);
+        }
+    }
+    return res;
+}
+
+// Question 4 :
+
+void afficheDesc(Tab t, int n ,int i)
+{
+    if (i>=0)
+    {
+        printf("t[%d]=%d\n",i,t[i]);
+        afficheDesc(t,n,i-1);
+    }
+}
+
+// Question 5 :
+
+int researchVal(Tab t, int n ,int i,int v)
+{
+    int res=-1;
+    if (i<n)
+    {
+        if (t[i]==v)
+        {
+            res=i;
+        }
+        else
+        {
+            res=researchVal(t,n,i+1,v);
+        }
+    }
+    return res;
+}
+
+
+// Question 6 :
+
+int researchDicho(Tab t, int n ,int i,int v)
+{
+    int res=-1;
+    if (i<n)
+    {
+        if (t[i]==v)
+        {
+            res=i;
+        }
+        else
+        {
+            res=researchDicho(t,n,i+1,v);
+        }
+    }
+    return res;
+}
+
+
+int main()
+{
+    Tab t1 = {4,2,8,0,7,3,1,5,9,6};
+    Tab t2 = {8,45,12,4,7,89,6,0,23,56};
+     printf ("La somme des entiers du tableau t1 = %d\n",somme(t1,N,0)); // Avec 3 paramètres
+     affiche(&t1, N, 0);
+     printf("La somme des entiers du tableau t1 est %d\n",sum2(t1,N)); // Avec 2 paramètres
+     printf("Le nombre d'elements du tableau de valeur superieur a 8 est %d\n",higherValue(t1,N,0,8));
+     afficheDesc(t1,N,N-1);
+     printf("L'indice de la valeur 8 est %d\n",researchVal(t1,N,0,8));
+     printf("L'indice de la valeur 23 est %d\n",researchDicho(t2, N, 0, 23));
+
+    return 0;
+}
